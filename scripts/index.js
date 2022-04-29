@@ -1,10 +1,11 @@
 const count = document.getElementById('count');
 const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
+const art = document.getElementById('art');
 const canvasC = document.getElementById('c');
 
 const config = {
-  birthdate: 'May 3, 2022',
+  birthdate: 'May 3, 2021',
   name: 'Nirmala'
 };
 
@@ -12,6 +13,7 @@ function hideEverything() {
   head.style.display = 'none';
   count.style.display = 'none';
   giftbox.style.display = 'none';
+  art.style.display = 'none';
   canvasC.style.display = 'none';
 }
 
@@ -455,6 +457,8 @@ x = setInterval(function() {
     head.style.display = 'none';
     count.style.display = 'none';
     giftbox.style.display = 'initial';
+    art.style.display = 'flex';
+    
     clearInterval(x);
     let merrywrap = document.getElementById('merrywrap');
     let box = merrywrap.getElementsByClassName('giftbox')[0];
@@ -465,7 +469,7 @@ x = setInterval(function() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
     }
-
+    
     function stepClass(step) {
       merrywrap.className = 'merrywrap';
       merrywrap.className = 'merrywrap step-' + step;
@@ -479,6 +483,7 @@ x = setInterval(function() {
       if (step === 3) {
       }
       if (step === 4) {
+        giftbox.style.display = 'none';
         return;
       }
       setTimeout(openBox, stepMinutes[step - 1]);
@@ -494,8 +499,8 @@ x = setInterval(function() {
     init();
   }
 
-  // if (distance < 0) {
-  //     clearInterval(x);
-  //     console.log("happy birthday");
-  // }
+  if (distance < 0) {
+      clearInterval(x);
+      console.log("happy birthday");
+  }
 }, second);

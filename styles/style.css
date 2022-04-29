@@ -18,6 +18,53 @@ body {
   font-weight: lighter;
   text-align: center;
 }
+#art{
+  width: 300px;
+  height: 200px;
+  right: 40px;
+  left: 40px;
+  bottom: 80px;
+  left: 50%;
+  margin-left: -150px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatUp 2s ease-in forwards;
+}
+.roundedcorner_ul {
+  border-radius: 10px;
+  margin: 3px;
+  float:left;
+  display:inline;
+  height: 80px;
+  width:80px;
+  background: url(PhotoMosaic.gif);
+  background-size: contain;
+}
+
+
+.roundedcorner_center {
+  border-radius: 10px;
+  margin: 3px;
+  float:left;
+  display:inline;
+  height:80px;
+  width:80px;
+  background: url(DeepNastalgia.gif);
+  background-size: contain;
+}
+
+.roundedcorner_ur {
+  border-radius: 10px;
+  margin: 3px;
+  float:left;
+  display:inline;
+  height:80px;
+  width:80px;
+  background: url(FaceMorph.gif);
+  background-size: contain;
+}
 
 h1 {
   font-weight: normal;
@@ -178,5 +225,14 @@ li span {
   100% {
       transform: translateY(100%);
       opacity: 0;
+ }
+}
+@keyframes floatUp {
+  0% {
+      transform: translateY(10px);
+      opacity: 0;
+ }
+  100% {
+      opacity: 1;
  }
 }
